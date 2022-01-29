@@ -1,9 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
-import ProductApp from "./products/Product";
+import "./index.scss";
 
-import NavBarApp from "./shared/nav-bar/NavBarApp";
+import ProductApp from "./components/products/Product";
+import NavBarApp from "./components/nav-bar/NavBarApp";
 
 ReactDOM.render(
   <>

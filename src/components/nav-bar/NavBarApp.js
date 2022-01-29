@@ -1,6 +1,6 @@
 import React from "react";
-import CartApp from "../components/cart/Cart";
-import "./NavBar.css";
+import CartApp from "../cart/Cart";
+import "./NavBar.scss";
 
 const NavBarApp = () => {
   const navBarItems = [
@@ -23,7 +23,9 @@ const NavBarApp = () => {
   ];
   let itemsNav = navBarItems.map((e) => (
     <li key={e.name} className="nav-bar__item">
-      <a href="#">{e.name}</a>
+      <a href="#" className="nav-btn">
+        {e.name}
+      </a>
     </li>
   ));
   return (

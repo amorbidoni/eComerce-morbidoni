@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import "./product.css";
+
+import "./product.scss";
 
 const ProductApp = ({ value }) => {
   const [counter, setCounter] = useState(value);

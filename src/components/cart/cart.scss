@@ -50,6 +50,9 @@
   animation-fill-mode: both;
   animation-duration: 0.5s;
 }
+.d-none {
+  display: none !important;
+}
 @keyframes productAnimation {
   0% {
     opacity: 0;

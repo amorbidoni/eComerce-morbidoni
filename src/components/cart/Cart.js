@@ -1,5 +1,5 @@
 import React from "react";
-import "./cart.css";
+import "./cart.scss";
 
 const CartApp = () => {
   const counter = 0;
