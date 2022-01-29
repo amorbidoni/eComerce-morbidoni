@@ -1,58 +1,56 @@
-.cart__box {
-  position: relative;
-  overflow: hidden;
-  width: 50px;
-  padding-bottom: 20px;
-}
-.cart__counter {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  top: 2;
-  right: 5px;
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  background-color: rgb(161, 4, 4);
-  color: white;
-  text-align: center;
-  font-size: 0.7rem;
-}
-.cart__img {
-  width: 20px;
-}
-.cart__img svg {
-  transition: all 0.5s;
-  fill: white;
-}
-.cart__product {
-  width: 10px;
-  padding-left: 8px;
+.cart {
+  &__box {
+    position: relative;
+    overflow: hidden;
+    width: 50px;
+    padding-bottom: 20px;
+  }
+  &__counter {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 2;
+    right: 5px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: rgb(161, 4, 4);
+    color: white;
+    text-align: center;
+    font-size: 0.7rem;
+  }
+  &__img {
+    width: 20px;
+    svg {
+      transition: all 0.5s;
+      fill: white;
+    }
+    &--animation {
+      animation-name: cartAnimation;
+      animation-delay: 0.5s;
+      animation-fill-mode: both;
+      animation-duration: 0.5s;
+    }
+  }
+  &__product {
+    width: 10px;
+    padding-left: 8px;
+    svg {
+      width: 15px;
+      fill: rgb(207, 85, 85);
+      opacity: 0;
+      transition: all 0.5s;
+    }
+    &--animation {
+      animation-name: productAnimation;
+      animation-duration: 1s;
+      animation-fill-mode: both;
+    }
+  }
 }
 
-.cart__product svg {
-  width: 15px;
-  fill: rgb(207, 85, 85);
-  opacity: 0;
-  transition: all 0.5s;
-}
-
-.cart__product--animation {
-  animation-name: productAnimation;
-  animation-duration: 1s;
-  animation-fill-mode: both;
-}
-.cart__img--animation {
-  animation-name: cartAnimation;
-  animation-delay: 0.5s;
-  animation-fill-mode: both;
-  animation-duration: 0.5s;
-}
-.d-none {
-  display: none !important;
-}
 @keyframes productAnimation {
   0% {
     opacity: 0;
