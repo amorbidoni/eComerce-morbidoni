@@ -1,7 +1,7 @@
 import React from "react";
 import "./cart.scss";
 
-const CartApp = () => {
+const CartWidgetApp = () => {
   const counter = 0;
   return (
     <>
@@ -32,4 +32,4 @@ const CartApp = () => {
   );
 };
 
-export default CartApp;
+export default CartWidgetApp;

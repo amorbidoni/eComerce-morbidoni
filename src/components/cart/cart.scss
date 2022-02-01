@@ -1,3 +1,4 @@
+@import "/src/styles/variables";
 .cart {
   &__box {
     position: relative;
@@ -16,8 +17,8 @@
     width: 15px;
     height: 15px;
     border-radius: 50%;
-    background-color: rgb(161, 4, 4);
-    color: white;
+    background-color: $color-secondary-medium;
+    color: $color-white;
     text-align: center;
     font-size: 0.7rem;
   }
@@ -25,7 +26,7 @@
     width: 20px;
     svg {
       transition: all 0.5s;
-      fill: white;
+      fill: $color-white;
     }
     &--animation {
       animation-name: cartAnimation;
@@ -39,7 +40,7 @@
     padding-left: 8px;
     svg {
       width: 15px;
-      fill: rgb(207, 85, 85);
+      fill: $color-secondary-light;
       opacity: 0;
       transition: all 0.5s;
     }

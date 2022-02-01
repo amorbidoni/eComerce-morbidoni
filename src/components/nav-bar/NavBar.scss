@@ -1,6 +1,7 @@
+@import "/src/styles/variables";
 nav {
   padding-top: 10px;
-  background-color: #1a1a1a;
+  background-color: $color-primary-dark;
   ul {
     display: flex;
     flex-direction: row;
@@ -12,7 +13,7 @@ nav {
       display: inline-block;
       &:not(:last-child) {
         padding-right: 20px;
-        border-right: 1px solid #666;
+        border-right: 1px solid $color-primary-medium;
       }
     }
   }
@@ -22,13 +23,16 @@ nav {
 .nav-btn:active {
   display: inline-block;
   text-decoration: none;
-  color: #666;
+  color: $color-primary-light;
   transition: all 0.3s;
 }
 .nav-btn:hover {
-  color: white;
+  color: $color-white;
   transform: translateX(-5px);
 }
-li:first-child a {
-  color: white;
+
+.active-item {
+  color: $color-white;
+  border-bottom: 1px solid $color-white;
+  transform: translateX(-5px);
 }
