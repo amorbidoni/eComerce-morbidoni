@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ProductApp from "../products/Product";
 
-const ItemListContainerApp = () => {
+const ItemListContainerApp = ({ title }) => {
   return (
     <>
-      <h1>item list container</h1>
+      <h1>{title}</h1>
       <ProductApp value={1} />
     </>
   );

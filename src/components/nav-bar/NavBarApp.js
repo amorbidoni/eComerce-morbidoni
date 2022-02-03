@@ -5,7 +5,7 @@ import "./NavBar.scss";
 
 const NavBarApp = () => {
   // set  item active
-  const [active, setActive] = useState();
+  const [active, setActive] = useState(1);
 
   const navBarItems = [
     {
@@ -50,7 +50,9 @@ const NavBarApp = () => {
     <nav className="nav-bar">
       <ul>
         {itemsNav}
-        <li>{<CartWidgetApp />}</li>
+        <li>
+          <CartWidgetApp />
+        </li>
       </ul>
     </nav>
   );
