@@ -5,27 +5,46 @@ import "./product.scss";
 
 const ProductApp = ({ value }) => {
   // counter
-  const { counter, increment } = useCounter(1);
+  const { counter, increment, decrement, resetCounter } = useCounter(0);
 
   // animacion agregar al carrito
   const agregarAlCarrito = () => {
+    let cartCounter = document.getElementById("cart-counter");
     let productSvg = document.getElementById("product-svg");
     let cartSvg = document.getElementById("cart-svg");
-    let cartCounter = document.getElementById("cart-counter");
     productSvg.classList.add("cart__product--animation");
     cartSvg.classList.add("cart__img--animation");
     increment();
+    console.log(counter);
     cartCounter.textContent = counter;
     setTimeout(() => {
       productSvg.classList.remove("cart__product--animation");
       cartSvg.classList.remove("cart__img--animation");
     }, 1000);
   };
+  const eliminarDelCarrito = () => {
+    let cartCounter = document.getElementById("cart-counter");
+    console.log(counter);
+    decrement();
+    cartCounter.textContent = counter;
+  };
+  const resetCarrito = () => {
+    let cartCounter = document.getElementById("cart-counter");
+    console.log(counter);
+    resetCounter();
+    cartCounter.textContent = counter;
+  };
 
   return (
     <>
       <button className="btn btn--buy" onClick={agregarAlCarrito}>
-        Comprar
+        +
+      </button>
+      <button className="btn btn--buy" onClick={resetCarrito}>
+        Eliminar Todos
+      </button>
+      <button className="btn btn--buy" onClick={eliminarDelCarrito}>
+        _
       </button>
     </>
   );

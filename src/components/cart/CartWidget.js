@@ -2,12 +2,12 @@ import React from "react";
 import "./cart.scss";
 
 const CartWidgetApp = () => {
-  const counter = 0;
+  let inicialState = 0;
   return (
     <>
       <div className="cart__box">
         <div id="cart-counter" className="cart__counter">
-          {counter}
+          {inicialState}
         </div>
         <div className="cart__product">
           <svg
