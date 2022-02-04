@@ -50,9 +50,7 @@ const NavBarApp = () => {
     <nav className="nav-bar">
       <ul>
         {itemsNav}
-        <li>
-          <CartWidgetApp />
-        </li>
+        <li>{/* <CartWidgetApp /> */}</li>
       </ul>
     </nav>
   );

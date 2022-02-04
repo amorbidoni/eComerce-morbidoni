@@ -1,14 +1,27 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./cart.scss";
 
-const CartWidgetApp = () => {
-  let inicialState = 0;
+const CartWidgetApp = ({ counter, counterIndication = true }) => {
+  useEffect(() => {
+    let productSvg = document.getElementById("product-svg");
+    let cartSvg = document.getElementById("cart-svg");
+    productSvg.classList.add("cart__product--animation");
+    cartSvg.classList.add("cart__img--animation");
+    setTimeout(() => {
+      productSvg.classList.remove("cart__product--animation");
+      cartSvg.classList.remove("cart__img--animation");
+    }, 1000);
+  }, [counter]);
+
   return (
     <>
       <div className="cart__box">
-        <div id="cart-counter" className="cart__counter">
-          {inicialState}
-        </div>
+        {counterIndication && (
+          <div id="cart-counter" className="cart__counter">
+            {counter}
+          </div>
+        )}
+
         <div className="cart__product">
           <svg
             id="product-svg"

@@ -1,11 +1,10 @@
-.btn {
+@mixin btn($width, $height) {
   background-color: #1a1a1a;
   color: white;
-  width: 100px;
-  height: 30px;
+  width: $width;
+  height: $height;
   border: none;
   border-radius: 5px;
-  margin: 50px;
   box-shadow: 0 5px 6px rgba(0, 0, 0, 0.4);
   transition: all 0.3s;
   cursor: pointer;
@@ -23,4 +22,20 @@
     box-shadow: none;
     transform: translateY(0);
   }
+}
+.btn__primary--small {
+  @include btn(30px, 30px);
+}
+.btn__primary--medium {
+  @include btn(100px, 40px);
+}
+.btn__primary--big {
+  @include btn(150px, 40px);
+}
+.btn__add {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 20px;
 }

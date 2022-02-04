@@ -5,7 +5,6 @@ const ItemListContainerApp = ({ title }) => {
   return (
     <>
       <h1>{title}</h1>
-      <ProductApp value={0} />
     </>
   );
 };

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useCounter } from "../../hooks/useCounter";
 
 import "./product.scss";
@@ -34,16 +34,23 @@ const ProductApp = ({ value }) => {
     resetCounter();
     cartCounter.textContent = counter;
   };
+  console.log("se inicia");
 
   return (
     <>
-      <button className="btn btn--buy" onClick={agregarAlCarrito}>
+      <button
+        className="btn__primary--medium btn--buy"
+        onClick={agregarAlCarrito}
+      >
         +
       </button>
-      <button className="btn btn--buy" onClick={resetCarrito}>
+      <button className="btn__primary--medium btn--buy" onClick={resetCarrito}>
         Eliminar Todos
       </button>
-      <button className="btn btn--buy" onClick={eliminarDelCarrito}>
+      <button
+        className="btn__primary--medium btn--buy"
+        onClick={eliminarDelCarrito}
+      >
         _
       </button>
     </>

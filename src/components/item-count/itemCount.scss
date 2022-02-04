@@ -1,0 +1,17 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 160px;
+  margin: 30px;
+  padding: 20px;
+  height: 210px;
+  border: 1px solid #464646;
+  border-radius: 5px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+  &__controllers {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
