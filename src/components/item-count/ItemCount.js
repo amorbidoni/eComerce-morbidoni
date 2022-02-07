@@ -5,7 +5,7 @@ import CartWidgetApp from "../cart/CartWidget";
 import "./itemCount.scss";
 
 const ItemCount = ({ stock, initial }) => {
-  const { counter, increment, decrement, resetCounter } = useCounter(initial);
+  const { counter, increment, decrement } = useCounter(initial);
   const onAdd = () => {
     if (stock > 0 && counter !== stock) {
       increment();

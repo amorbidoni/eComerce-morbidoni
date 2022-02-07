@@ -9,7 +9,7 @@ const App = () => {
     <main>
       <NavBarApp />
       <ItemListContainerApp title="item list container" />
-      <ItemCount initial={1} stock={5} />
+      <ItemCount initial={1} stock={10} />
     </main>
   );
 };
