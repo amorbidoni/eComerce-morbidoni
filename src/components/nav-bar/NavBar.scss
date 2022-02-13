@@ -1,7 +1,12 @@
 @import "/src/styles/variables";
 nav {
-  padding-top: 10px;
+  padding-bottom: 10px;
   background-color: $color-primary-dark;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-end;
   ul {
     display: flex;
     flex-direction: row;
