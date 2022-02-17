@@ -95,7 +95,7 @@ const getProductos = () => {
     }
   });
 };
-const ItemListContainerApp = ({ title }) => {
+const ItemListContainerApp = () => {
   const [loading, setLoading] = useState(true);
   const [products, setProducts] = useState([]);
   useEffect(() => {

@@ -1,14 +1,11 @@
 import React from "react";
-
-import NavBarApp from "./components/nav-bar/NavBarApp";
-import ItemListContainerApp from "./components/itemListContainer/ItemListContainer";
-import ItemCount from "./components/item-count/ItemCount";
-
+import ItemDetailContainerApp from "./components/itemDetailContainer/ItemDetailContainer";
+import { Prueba } from "./components/prueba/Prueba";
+import { Rutas } from "./routes";
 const App = () => {
   return (
     <main>
-      <NavBarApp />
-      <ItemListContainerApp title="item list container" />
+      <Rutas />
     </main>
   );
 };

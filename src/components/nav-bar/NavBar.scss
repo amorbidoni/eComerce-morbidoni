@@ -2,7 +2,8 @@
 nav {
   padding-bottom: 10px;
   background-color: $color-primary-dark;
-  height: 50px;
+  min-height: 50px;
+  padding-top: 20px;
   display: flex;
   flex-direction: row;
   align-items: flex-end;
@@ -36,7 +37,7 @@ nav {
   transform: translateX(-5px);
 }
 
-.active-item {
+.active {
   color: $color-white;
   border-bottom: 1px solid $color-white;
   transform: translateX(-5px);

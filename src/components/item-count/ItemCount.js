@@ -49,7 +49,7 @@ const ItemCount = ({ stock, initial }) => {
           }
           onClick={onAdd}
         >
-          Add <CartWidgetApp counter={counter} counterIndication={false} />
+          Add
         </button>
         {onaddModal && (
           <div className="card__modal">

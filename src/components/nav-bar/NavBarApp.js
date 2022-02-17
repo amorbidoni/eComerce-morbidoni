@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import { Link, NavLink } from "react-router-dom";
 import CartWidgetApp from "../cart/CartWidget";
 import "./NavBar.scss";
 
@@ -11,22 +11,22 @@ const NavBarApp = () => {
     {
       id: 1,
       name: "Inicio",
-      link: "",
+      link: "/",
     },
     {
       id: 2,
       name: "Productos",
-      link: "",
+      link: "/productos",
     },
     {
       id: 3,
       name: "Promos",
-      link: "",
+      link: "/promos",
     },
     {
       id: 4,
       name: "Regalería",
-      link: "",
+      link: "/regaleria",
     },
   ];
   const setItemActive = (id, link) => {
@@ -34,15 +34,15 @@ const NavBarApp = () => {
   };
   let itemsNav = navBarItems.map(({ name, id, link }) => (
     <li key={name} className="nav-bar__item">
-      <a
-        href="#"
-        className={id === active ? "nav-btn active-item" : "nav-btn"}
+      <NavLink
+        to={link}
+        className="nav-btn"
         onClick={() => {
           setItemActive(id, link);
         }}
       >
         {name}
-      </a>
+      </NavLink>
     </li>
   ));
 
@@ -50,7 +50,9 @@ const NavBarApp = () => {
     <nav className="nav-bar">
       <ul>
         {itemsNav}
-        <li>{/* <CartWidgetApp /> */}</li>
+        <li>
+          <CartWidgetApp counterIndication={false} />
+        </li>
       </ul>
     </nav>
   );
