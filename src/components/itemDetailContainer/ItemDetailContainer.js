@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { ItemDetailApp } from "../itemDetail/ItemDetail";
+import { ItemDetailApp } from "./ItemDetail";
 
 const item = [
   {

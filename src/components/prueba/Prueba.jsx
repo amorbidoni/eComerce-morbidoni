@@ -15,7 +15,7 @@ export const Prueba = () => {
     console.log(e.target.value);
   };
   const preventVocalsExercise = (e) => {
-    let regEx = /[aeiouAEIOU]/;
+    let regEx = /^[aeiouAEIOU]{1}[A-Za-z]*/;
     if (regEx.test(e.key)) {
       e.preventDefault();
     }

@@ -16,7 +16,7 @@
     background-color: #252525;
     border: 1px solid #1a1a1a;
     transform: translateY(-1px);
-    box-shadow: 0 7px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.2);
   }
   &:active {
     box-shadow: none;
@@ -24,18 +24,18 @@
   }
 }
 .btn__primary--small {
-  @include btn(30px, 30px);
+  @include btn(40px, 40px);
 }
 .btn__primary--medium {
   @include btn(100px, 40px);
 }
 .btn__primary--big {
-  @include btn(150px, 40px);
+  @include btn(100%, 40px);
 }
 .btn__add {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  margin-top: 20px;
+  margin: 14px auto 0;
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import CartWidgetApp from "../components/cart/CartWidget";
-import { ItemDetailApp } from "../components/itemDetail/ItemDetail";
+import { ItemDetailApp } from "../components/itemDetailContainer/ItemDetail";
 import ItemDetailContainerApp from "../components/itemDetailContainer/ItemDetailContainer";
 import ItemListContainerApp from "../components/itemListContainer/ItemListContainer";
 import NavBarApp from "../components/nav-bar/NavBarApp";

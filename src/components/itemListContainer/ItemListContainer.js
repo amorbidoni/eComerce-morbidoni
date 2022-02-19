@@ -1,87 +1,81 @@
 import React, { useEffect, useState } from "react";
-import { ItemList } from "../itemList/ItemList";
-import ProductApp from "../products/Product";
+import { ItemList } from "./ItemList";
+
+import img from "../../assets/images";
 
 const products = [
   {
     id: "001",
     name: "Alma Negra",
     specifications: "Tinto",
-    detail: "",
+    detail:
+      "Color rojo rubí profundo. En nariz, es muy expresivo e intenso. Las frutillas, cerezas y membrillos son los aromas frutales que más se destacan, fundiéndose con notas de vainilla, madera tostada y sutiles notas a especias. En boca es pleno, de taninos muy agradables, y suaves.",
     price: 100,
     stock: 10,
-    image:
-      "https://cdn.shopify.com/s/files/1/0425/0642/0390/products/ComiteWines-Foto-_MISEREREOK-IMG_5115.jpg?v=1623091998",
+    image: img.almaNegraTrans,
   },
   {
     id: "002",
-    name: "Alma Negra",
-    specifications: "Tinto",
+    name: "Andillian",
+    specifications: "Cabernet Franc",
     detail: "",
-    price: 100,
+    price: 1530,
     stock: 10,
-    image:
-      "https://cdn.shopify.com/s/files/1/0425/0642/0390/products/ComiteWines-Foto-_MISEREREOK-IMG_5115.jpg?v=1623091998",
+    image: img.andillianCF,
   },
   {
     id: "003",
-    name: "Alma Negra",
+    name: "Animal",
     specifications: "Tinto",
     detail: "",
-    price: 100,
+    price: 900,
     stock: 10,
-    image:
-      "https://cdn.shopify.com/s/files/1/0425/0642/0390/products/ComiteWines-Foto-_MISEREREOK-IMG_5115.jpg?v=1623091998",
+    image: img.animalTrans,
   },
   {
     id: "004",
-    name: "Alma Negra",
-    specifications: "Tinto",
+    name: "Antigal Uno",
+    specifications: "Cabernet Sauvignon",
     detail: "",
-    price: 100,
+    price: 1200,
     stock: 10,
-    image:
-      "https://cdn.shopify.com/s/files/1/0425/0642/0390/products/ComiteWines-Foto-_MISEREREOK-IMG_5115.jpg?v=1623091998",
+    image: img.antigalUnoCS,
   },
   {
     id: "008",
-    name: "Alma Negra",
-    specifications: "Tinto",
+    name: "Bendito Pecado",
+    specifications: "Cabernet Sauvignon",
     detail: "",
-    price: 100,
+    price: 800,
     stock: 10,
-    image:
-      "https://cdn.shopify.com/s/files/1/0425/0642/0390/products/ComiteWines-Foto-_MISEREREOK-IMG_5115.jpg?v=1623091998",
+    image: img.benditoPecadoCF,
   },
   {
     id: "005",
-    name: "Alma Negra",
-    specifications: "Tinto",
+    name: "Bendito Pecado",
+    specifications: "Malbec",
     detail: "",
-    price: 100,
+    price: 800,
     stock: 10,
-    image:
-      "https://cdn.shopify.com/s/files/1/0425/0642/0390/products/ComiteWines-Foto-_MISEREREOK-IMG_5115.jpg?v=1623091998",
+    image: img.benditoPecadoMalbec,
   },
   {
     id: "006",
-    name: "Alma Negra",
-    specifications: "Tinto",
+    name: "Biribiri Reserva",
+    specifications: "Malbec",
     detail: "",
     price: 100,
     stock: 10,
-    image:
-      "https://cdn.shopify.com/s/files/1/0425/0642/0390/products/ComiteWines-Foto-_MISEREREOK-IMG_5115.jpg?v=1623091998",
+    image: img.biribiriReservaTrans,
   },
   {
     id: "007",
-    name: "Alma Negra",
-    specifications: "Tinto",
+    name: "Capítulo Siete",
+    specifications: "Malbec",
     detail: "",
     price: 100,
     stock: 10,
-    image:
-      "https://cdn.shopify.com/s/files/1/0425/0642/0390/products/ComiteWines-Foto-_MISEREREOK-IMG_5115.jpg?v=1623091998",
+    image: img.capituloSiete,
   },
 ];
 const getProductos = () => {
