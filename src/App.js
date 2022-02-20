@@ -1,6 +1,7 @@
 import React from "react";
-import ItemDetailContainerApp from "./components/itemDetailContainer/ItemDetailContainer";
-import { Prueba } from "./components/prueba/Prueba";
+
+import { NavBarCategoriesApp } from "./components/nav-bar-categories/NavBarCategories";
+
 import { Rutas } from "./routes";
 const App = () => {
   return (

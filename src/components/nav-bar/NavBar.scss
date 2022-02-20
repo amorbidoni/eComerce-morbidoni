@@ -1,5 +1,5 @@
 @import "/src/styles/variables";
-nav {
+.nav-bar {
   padding-bottom: 10px;
   background-color: $color-primary-dark;
   min-height: 50px;
@@ -37,7 +37,7 @@ nav {
   transform: translateX(-5px);
 }
 
-.active {
+.navBar-active {
   color: $color-white;
   border-bottom: 1px solid $color-white;
   transform: translateX(-5px);

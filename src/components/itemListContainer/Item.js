@@ -6,7 +6,7 @@ export const Item = ({ product }) => {
   return (
     <div className="product-card">
       <div className="search-icon__box">
-        <SearchWidget />
+        <SearchWidget itemId={product.id} />
       </div>
       <div className="row">
         <img

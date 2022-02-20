@@ -5,7 +5,6 @@ import "./NavBar.scss";
 
 const NavBarApp = () => {
   // set  item active
-  const [active, setActive] = useState(1);
 
   const navBarItems = [
     {
@@ -29,17 +28,14 @@ const NavBarApp = () => {
       link: "/regaleria",
     },
   ];
-  const setItemActive = (id, link) => {
-    setActive(id);
-  };
+
   let itemsNav = navBarItems.map(({ name, id, link }) => (
     <li key={name} className="nav-bar__item">
       <NavLink
         to={link}
-        className="nav-btn"
-        onClick={() => {
-          setItemActive(id, link);
-        }}
+        className={({ isActive }) =>
+          isActive ? "nav-btn navBar-active" : "nav-btn"
+        }
       >
         {name}
       </NavLink>

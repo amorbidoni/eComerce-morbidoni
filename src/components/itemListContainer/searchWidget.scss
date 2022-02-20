@@ -5,11 +5,40 @@
   height: 50px;
   border-radius: 0 5px 0 50%;
   background-color: $color-primary-dark;
+  cursor: pointer;
+  z-index: 1000;
+  transition: 0.5s;
   svg {
     position: absolute;
     right: 5px;
     top: 5px;
     width: 30px;
     fill: white;
+    transition: 0.5s;
+  }
+  &:hover {
+    width: 270px;
+    height: 360px;
+    border-radius: 5px 5px 5px 30%;
+    opacity: 0.9;
+  }
+  &:hover .search-icon__text {
+    opacity: 1;
+  }
+  &:hover svg {
+    transform: rotate(-15deg);
+    right: 15px;
+    top: 15px;
+  }
+  &__text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 2rem;
+    opacity: 0;
+    transition: 0.5s;
+    width: 128px;
   }
 }
