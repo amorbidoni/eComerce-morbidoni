@@ -57,6 +57,9 @@
     margin-bottom: 10px;
     transform: rotate(-18deg);
   }
+  &__image--box {
+    min-height: 204px;
+  }
 }
 .row {
   width: 100%;

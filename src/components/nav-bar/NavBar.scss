@@ -8,6 +8,16 @@
   flex-direction: row;
   align-items: flex-end;
   justify-content: flex-end;
+  position: relative;
+  &__logo {
+    position: absolute;
+    left: 10%;
+    top: 0;
+    img {
+      width: 100px;
+      cursor: pointer;
+    }
+  }
   ul {
     display: flex;
     flex-direction: row;

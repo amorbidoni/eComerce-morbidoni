@@ -1,7 +1,5 @@
 import React from "react";
 
-import { NavBarCategoriesApp } from "./components/nav-bar-categories/NavBarCategories";
-
 import { Rutas } from "./routes";
 const App = () => {
   return (

@@ -18,8 +18,8 @@ const NavBarCategoriesApp = () => {
       category: "espumantes",
     },
     {
-      name: "Aperitivos",
-      category: "aperitivos",
+      name: "Destilados",
+      category: "destilados",
     },
   ];
 

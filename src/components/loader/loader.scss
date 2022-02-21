@@ -1,0 +1,28 @@
+.loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  margin: 0 auto;
+  margin-bottom: 100px;
+  &__image {
+    width: 150px;
+    animation-name: loaderAnimation;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+  &__text {
+    text-align: center;
+    width: 100%;
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+}
+
+@keyframes loaderAnimation {
+  100% {
+    transform: rotate(360deg);
+  }
+}

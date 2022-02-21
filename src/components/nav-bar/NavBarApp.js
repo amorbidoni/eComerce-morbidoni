@@ -1,6 +1,7 @@
-import React, { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import React from "react";
+import { NavLink } from "react-router-dom";
 import CartWidgetApp from "../cart/CartWidget";
+import img from "../../assets/images";
 import "./NavBar.scss";
 
 const NavBarApp = () => {
@@ -44,6 +45,9 @@ const NavBarApp = () => {
 
   return (
     <nav className="nav-bar">
+      <NavLink to={"/"} className="nav-bar__logo">
+        <img src={img.logoCavaTransBlanco} />
+      </NavLink>
       <ul>
         {itemsNav}
         <li>

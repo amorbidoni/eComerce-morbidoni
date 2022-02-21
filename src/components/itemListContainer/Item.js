@@ -9,11 +9,14 @@ export const Item = ({ product }) => {
         <SearchWidget itemId={product.id} />
       </div>
       <div className="row">
-        <img
-          className="product-card__image"
-          src={product.image}
-          alt={product.name}
-        />
+        <div className="product-card__image--box">
+          <img
+            className="product-card__image"
+            src={product.image}
+            alt={product.name}
+          />
+        </div>
+
         <div className="product-card__detail">
           <h2 className="product-card__detail--name">{product.name}</h2>
           <p className="product-card__detail--specifications">
