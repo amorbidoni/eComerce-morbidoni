@@ -1,3 +1,4 @@
+@import './variables';
 @mixin btn($width, $height) {
   background-color: #1a1a1a;
   color: white;
@@ -21,6 +22,8 @@
   &:active {
     box-shadow: none;
     transform: translateY(0);
+    text-decoration: none;
+    color: white;
   }
 }
 .btn__primary--small {
@@ -38,4 +41,52 @@
   justify-content: space-around;
   align-items: center;
   margin: 14px auto 0;
+}
+.btn__end {
+  width: 200px;
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  background-color: $color-primary-dark;
+  color: $color-primary-light;
+  border-radius: 10px;
+  text-decoration: none;
+}
+@mixin btnLight($width, $height) {
+  background-color: $color-white;
+  color: $color-primary-dark;
+  width: $width;
+  height: $height;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 5px 6px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s;
+  cursor: pointer;
+  &:focus {
+    outline: none;
+  }
+  &:hover {
+    color: white;
+    background-color: $color-primary-light;
+    border: 1px solid #1a1a1a;
+    transform: translateY(-1px);
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.2);
+  }
+  &:active {
+    box-shadow: none;
+    transform: translateY(0);
+  }
+}
+
+.btnLight__primary--small {
+  @include btnLight(40px, 40px);
+}
+.btnLight__primary--medium {
+  @include btnLight(100px, 40px);
+}
+.btnLight__primary--big {
+  @include btnLight(100%, 40px);
 }

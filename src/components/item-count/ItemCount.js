@@ -1,11 +1,9 @@
-import React, { useState } from "react";
-import { useCounter } from "../../hooks/useCounter";
-import CartWidgetApp from "../cart/CartWidget";
+import React, { useState } from 'react';
+import { useCounter } from '../../hooks/useCounter';
 
-import "./itemCount.scss";
+import './itemCount.scss';
 
-const ItemCount = ({ stock, initial }) => {
-  const [onaddModal, setOnaddModal] = useState(false);
+const ItemCount = ({ stock, initial, onAdd, onAddModal, name }) => {
   const { counter, increment, decrement } = useCounter(initial);
   const handleIncrement = () => {
     if (stock > 0 && counter !== stock) {
@@ -13,16 +11,9 @@ const ItemCount = ({ stock, initial }) => {
     }
   };
   const handleRest = () => {
-    if (counter > 0) {
+    if (counter > 1) {
       decrement();
     }
-  };
-  const onAdd = () => {
-    setOnaddModal(true);
-
-    setTimeout(() => {
-      setOnaddModal(false);
-    }, 2000);
   };
 
   return (
@@ -30,7 +21,7 @@ const ItemCount = ({ stock, initial }) => {
       <div className="card">
         <div
           className={
-            onaddModal ? "card__controllers filter" : "card__controllers"
+            onAddModal ? 'card__controllers filter' : 'card__controllers'
           }
         >
           <button className="btn__primary--small" onClick={handleRest}>
@@ -43,17 +34,21 @@ const ItemCount = ({ stock, initial }) => {
         </div>
         <button
           className={
-            onaddModal
-              ? "btn__primary--big btn__add filter"
-              : "btn__primary--big btn__add"
+            onAddModal
+              ? 'btn__primary--big btn__add filter'
+              : 'btn__primary--big btn__add'
           }
-          onClick={onAdd}
+          onClick={() => {
+            onAdd(counter);
+          }}
         >
           Add
         </button>
-        {onaddModal && (
+        {onAddModal && (
           <div className="card__modal">
-            <p className="card__modal--text">Producto agregado!</p>
+            <p className="card__modal--text">
+              {counter} unidades de {name} agregadas.
+            </p>
             <div className="cart-box">
               <div className="card__modal--product">
                 <svg
