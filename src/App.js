@@ -1,10 +1,13 @@
-import React from "react";
+import React from 'react';
+import { CartProvider } from './components/context/CartProvider';
 
-import { Rutas } from "./routes";
+import { Rutas } from './routes';
 const App = () => {
   return (
     <main>
-      <Rutas />
+      <CartProvider>
+        <Rutas />
+      </CartProvider>
     </main>
   );
 };

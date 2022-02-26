@@ -1,8 +1,8 @@
-import React from "react";
-import ItemCount from "../item-count/ItemCount";
-import "./item.scss";
-import { SearchWidget } from "./SearchWidget";
-export const Item = ({ product }) => {
+import React, { memo } from 'react';
+import ItemCount from '../item-count/ItemCount';
+import './item.scss';
+import { SearchWidget } from './SearchWidget';
+export const Item = memo(({ product }) => {
   return (
     <div className="product-card">
       <div className="search-icon__box">
@@ -22,11 +22,11 @@ export const Item = ({ product }) => {
           <p className="product-card__detail--specifications">
             {product.specifications}
           </p>
-          <p className="product-card__detail--price">{"$" + product.price}</p>
+          <p className="product-card__detail--price">{'$' + product.price}</p>
         </div>
       </div>
 
       <ItemCount stock={product.stock} initial={0} />
     </div>
   );
-};
+});

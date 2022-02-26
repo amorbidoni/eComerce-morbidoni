@@ -19,9 +19,9 @@ export const ItemDetailApp = ({ item }) => {
     <div className="product-detail">
       <div
         className={
-          item.name === undefined
-            ? 'product-detail__left-box'
-            : 'product-detail__left-box left-box-animation '
+          item.name
+            ? 'product-detail__left-box left-box-animation'
+            : 'product-detail__left-box'
         }
       >
         <img src={img.logoCavaTransBlanco} alt="inicio" />
@@ -30,19 +30,19 @@ export const ItemDetailApp = ({ item }) => {
       <img className="product-detail__image" src={item.image} alt={item.name} />
       <div
         className={
-          item.name === undefined
-            ? 'product-detail__detail'
-            : 'product-detail__detail detail-animation'
+          item.name
+            ? 'product-detail__detail detail-animation'
+            : 'product-detail__detail'
         }
       >
-        <h2 className={item.name === undefined ? '' : 'detail-text-animation'}>
+        <h2 className={item.name ? 'detail-text-animation' : ''}>
           {item.name}
         </h2>
-        <p className={item.name === undefined ? '' : 'detail-text-animation '}>
+        <p className={item.name ? 'detail-text-animation' : ''}>
           {item.detail}
         </p>
-        <p className={item.name === undefined ? '' : 'detail-text-animation '}>
-          {item.price === undefined ? '' : '$' + item.price}
+        <p className={item.name ? 'detail-text-animation ' : ''}>
+          {item.price ? '' : '$' + item.price}
         </p>
         <div className="item-count">
           {!inCart ? (

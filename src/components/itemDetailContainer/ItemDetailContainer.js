@@ -303,10 +303,13 @@ const ItemDetailContainerApp = () => {
 
   return (
     <>
-      {loading && <LoaderApp />}
-      <section className="item-list-container">
-        <ItemDetailApp item={item} />
-      </section>
+      {loading ? (
+        <LoaderApp />
+      ) : (
+        <section className="item-list-container">
+          <ItemDetailApp item={item} />
+        </section>
+      )}
     </>
   );
 };
