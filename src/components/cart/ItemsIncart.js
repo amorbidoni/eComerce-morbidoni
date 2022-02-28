@@ -1,13 +1,10 @@
 import React, { memo } from 'react';
-import ItemCount from '../item-count/ItemCount';
-import './item.scss';
-import { SearchWidget } from './SearchWidget';
-export const Item = memo(({ product, cart }) => {
+
+import './cart.scss';
+
+export const ItemsInCart = memo(({ product }) => {
   return (
     <div className="product-card">
-      <div className="search-icon__box">
-        <SearchWidget itemId={product.id} />
-      </div>
       <div className="row">
         <div className="product-card__image--box">
           <img
@@ -25,8 +22,6 @@ export const Item = memo(({ product, cart }) => {
           <p className="product-card__detail--price">{'$' + product.price}</p>
         </div>
       </div>
-
-      <ItemCount stock={product.stock} initial={0} />
     </div>
   );
 });

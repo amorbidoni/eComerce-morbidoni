@@ -310,7 +310,7 @@ const ItemListContainerApp = () => {
         console.error(err);
       });
   }, [categoryId]);
-  console.log(products);
+
   return (
     <>
       <NavBarCategoriesApp />

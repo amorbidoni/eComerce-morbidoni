@@ -1,26 +1,28 @@
-import React, { useEffect } from "react";
-import "./cart.scss";
-import { Link } from "react-router-dom";
+import React, { useEffect } from 'react';
+import './cart.scss';
+import { Link } from 'react-router-dom';
+import { useCartContext } from '../context/CartProvider';
 
 const CartWidgetApp = ({ counter, counterIndication = true }) => {
   useEffect(() => {
-    let productSvg = document.getElementById("product-svg");
-    let cartSvg = document.getElementById("cart-svg");
-    productSvg.classList.add("cart__product--animation");
-    cartSvg.classList.add("cart__img--animation");
+    let productSvg = document.getElementById('product-svg');
+    let cartSvg = document.getElementById('cart-svg');
+    productSvg.classList.add('cart__product--animation');
+    cartSvg.classList.add('cart__img--animation');
     setTimeout(() => {
-      productSvg.classList.remove("cart__product--animation");
-      cartSvg.classList.remove("cart__img--animation");
+      productSvg.classList.remove('cart__product--animation');
+      cartSvg.classList.remove('cart__img--animation');
     }, 1000);
   }, [counter]);
-
+  const { getQuantityItemsInCart } = useCartContext();
+  console.log(getQuantityItemsInCart);
   return (
     <>
-      <Link to={"/cart"}>
+      <Link to={'/cart'}>
         <div className="cart__box">
           {counterIndication && (
             <div id="cart-counter" className="cart__counter">
-              {counter}
+              {getQuantityItemsInCart()}
             </div>
           )}
 

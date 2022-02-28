@@ -1,16 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import img from '../../assets/images';
 import ItemCount from '../item-count/ItemCount';
 import './itemDetail.scss';
+import { CartContext, useCartContext } from '../context/CartProvider';
 
 export const ItemDetailApp = ({ item }) => {
+  const { quantity, addItem, isInCart, deleteItem, deleteAllItemsInCart } =
+    useCartContext();
+
   const [onAddModal, setOnaddModal] = useState(false);
   const [inCart, setInCart] = useState(false);
   const onAdd = (counter) => {
     setInCart(true);
     setOnaddModal(true);
-
+    addItem(item, counter);
     setTimeout(() => {
       setOnaddModal(false);
     }, 2000);
@@ -35,17 +39,13 @@ export const ItemDetailApp = ({ item }) => {
             : 'product-detail__detail'
         }
       >
-        <h2 className={item.name ? 'detail-text-animation' : ''}>
-          {item.name}
-        </h2>
-        <p className={item.name ? 'detail-text-animation' : ''}>
-          {item.detail}
-        </p>
-        <p className={item.name ? 'detail-text-animation ' : ''}>
+        <h2 className={item.name && 'detail-text-animation'}>{item.name}</h2>
+        <p className={item.name && 'detail-text-animation'}>{item.detail}</p>
+        <p className={item.name && 'detail-text-animation '}>
           {item.price ? '' : '$' + item.price}
         </p>
-        <div className="item-count">
-          {!inCart ? (
+        <div className={!isInCart ? 'item-count' : 'item-count item-in-cart'}>
+          {!isInCart(item.id) ? (
             <ItemCount
               onAdd={onAdd}
               onAddModal={onAddModal}
@@ -54,9 +54,28 @@ export const ItemDetailApp = ({ item }) => {
               name={item.name}
             />
           ) : (
-            <Link to="/carrito" className="btn__end">
-              Finalizar compra
-            </Link>
+            <div className="item-in-cart">
+              <p>El producto ya se encuentra en el carrito</p>
+              <Link to="/carrito" className="btn__end">
+                Ver carrito
+              </Link>
+              <button
+                className="btn__end"
+                onClick={() => {
+                  deleteItem(item.id);
+                }}
+              >
+                Eliminar del carrito
+              </button>
+              <button
+                className="btn__end"
+                onClick={() => {
+                  deleteAllItemsInCart();
+                }}
+              >
+                Vaciar carrito
+              </button>
+            </div>
           )}
         </div>
       </div>
