@@ -1,18 +1,16 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import img from '../../assets/images';
 import ItemCount from '../item-count/ItemCount';
 import './itemDetail.scss';
-import { CartContext, useCartContext } from '../context/CartProvider';
+import { useCartContext } from '../context/CartProvider';
 
 export const ItemDetailApp = ({ item }) => {
-  const { quantity, addItem, isInCart, deleteItem, deleteAllItemsInCart } =
-    useCartContext();
+  const { addItem, isInCart, deleteItem } = useCartContext();
 
   const [onAddModal, setOnaddModal] = useState(false);
-  const [inCart, setInCart] = useState(false);
+
   const onAdd = (counter) => {
-    setInCart(true);
     setOnaddModal(true);
     addItem(item, counter);
     setTimeout(() => {
@@ -67,14 +65,9 @@ export const ItemDetailApp = ({ item }) => {
               >
                 Eliminar del carrito
               </button>
-              <button
-                className="btn__end"
-                onClick={() => {
-                  deleteAllItemsInCart();
-                }}
-              >
-                Vaciar carrito
-              </button>
+              <Link className="btn__end" to={'/productos'}>
+                Seguir comprando
+              </Link>{' '}
             </div>
           )}
         </div>

@@ -45,7 +45,14 @@ export const CartProvider = ({ children }) => {
       .reduce((prev, curr) => prev + curr, 0);
     return qty;
   };
+  //sumar totales
 
+  const getTotalPrice = () => {
+    const total = itemsInCart
+      .map((e) => e.price * e.qty)
+      .reduce((prev, curr) => prev + curr, 0);
+    return total;
+  };
   // declaro a carritociontext como proveedeor con provider
   return (
     <CartContext.Provider
@@ -57,6 +64,7 @@ export const CartProvider = ({ children }) => {
         deleteItem,
         deleteAllItemsInCart,
         getQuantityItemsInCart,
+        getTotalPrice,
       }}
     >
       {/* declaro a quien voy a enviar la informacion con childrens */}

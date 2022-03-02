@@ -51,7 +51,7 @@ const NavBarApp = () => {
       <ul>
         {itemsNav}
         <li>
-          <CartWidgetApp counterIndication={true} />
+          <CartWidgetApp />
         </li>
       </ul>
     </nav>

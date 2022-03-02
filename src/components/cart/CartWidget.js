@@ -1,9 +1,9 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './cart.scss';
 import { Link } from 'react-router-dom';
 import { useCartContext } from '../context/CartProvider';
 
-const CartWidgetApp = ({ counter, counterIndication = true }) => {
+const CartWidgetApp = ({ counter }) => {
   useEffect(() => {
     let productSvg = document.getElementById('product-svg');
     let cartSvg = document.getElementById('cart-svg');
@@ -15,12 +15,12 @@ const CartWidgetApp = ({ counter, counterIndication = true }) => {
     }, 1000);
   }, [counter]);
   const { getQuantityItemsInCart } = useCartContext();
-  console.log(getQuantityItemsInCart);
+
   return (
     <>
-      <Link to={'/cart'}>
+      <Link to={'/carrito'}>
         <div className="cart__box">
-          {counterIndication && (
+          {getQuantityItemsInCart() !== 0 && (
             <div id="cart-counter" className="cart__counter">
               {getQuantityItemsInCart()}
             </div>
