@@ -28,7 +28,7 @@ export const Rutas = () => {
         {/* <Route path="/cart" element={<CartWidgetApp />} /> */}
         <Route path="/item-detail/:id" element={<ItemDetailContainerApp />} />
         <Route path="/itemDetail" element={<ItemDetailContainerApp />} />
-        <Route path="/prueba" element={<Prueba />} />
+        {/* <Route path="/prueba" element={<Prueba />} /> */}
         <Route path="/promos" element={<Promos />} />
         <Route path="/regaleria" element={<Regaleria />} />
         <Route path="/carrito" element={<CartApp />} />
