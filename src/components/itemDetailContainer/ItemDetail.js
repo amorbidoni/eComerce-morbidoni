@@ -19,17 +19,15 @@ export const ItemDetailApp = ({ item }) => {
   };
   return (
     <div className="product-detail">
-      <div
+      <img
         className={
           item.name
-            ? 'product-detail__left-box left-box-animation'
-            : 'product-detail__left-box'
+            ? 'product-detail__image image-animation'
+            : 'product-detail__image'
         }
-      >
-        <img src={img.logoCavaTransBlanco} alt="inicio" />
-        {/* <ItemCount stock={item.stock} colorLight={true} /> */}
-      </div>
-      <img className="product-detail__image" src={item.image} alt={item.name} />
+        src={item.image}
+        alt={item.name}
+      />
       <div
         className={
           item.name
@@ -50,6 +48,7 @@ export const ItemDetailApp = ({ item }) => {
               stock={item.stock}
               initial={1}
               name={item.name}
+              className="item-count--btns"
             />
           ) : (
             <div className="item-in-cart">

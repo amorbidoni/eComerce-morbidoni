@@ -6,9 +6,9 @@
   align-items: center;
   position: relative;
   width: 100%;
-  padding: 10px;
+  padding: 20px;
   overflow: hidden;
-  height: 450px;
+  height: 500px;
 
   &__image {
     width: 110px;
@@ -21,43 +21,27 @@
     flex-direction: column;
     justify-content: center;
     margin-left: 10px;
-    color: $color-primary-light;
-    background-color: $color-primary-dark;
-    clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%);
+    color: $color-primary-dark;
+    background-color: white;
     padding-left: 200px;
-    height: 450px;
     width: 50%;
     position: absolute;
     right: 0;
-    top: 10px;
+    top: 100px;
 
     p {
       margin: 20px 0;
-      width: 50%;
+      width: 80%;
     }
   }
-  &__left-box {
-    position: absolute;
-    left: 0;
-    background-color: $color-primary-dark;
-    height: 450px;
-    width: 20%;
-    opacity: 0;
 
-    img {
-      position: absolute;
-      width: 200px;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-    }
-  }
   .item-count {
     width: 280px;
     height: 100px;
     padding: 20px;
     background-color: white;
     border-radius: 10px;
+    padding: 20px !important;
   }
   .item-in-cart {
     width: 300px;
@@ -88,7 +72,11 @@
   animation-duration: 1s;
   animation-fill-mode: both;
 }
-
+.image-animation {
+  animation-name: animationWine;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
 @keyframes itemDetailAnimation {
   0% {
     right: -100%;
@@ -105,15 +93,18 @@
     transform: translateX(0);
   }
 }
-@keyframes animationLeftBox {
+@keyframes animationWine {
   0% {
-    transform: translateX(-100%);
+    transform: translateX(-100%) rotate(0deg);
   }
   10% {
     opacity: 1;
   }
+  90% {
+    transform: translateX(0) rotate(0deg);
+  }
   100% {
-    transform: translateX(0);
+    transform: translateX(0) rotate(10deg);
     opacity: 1;
   }
 }

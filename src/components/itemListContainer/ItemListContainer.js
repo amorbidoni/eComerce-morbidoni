@@ -16,15 +16,19 @@ const ItemListContainerApp = () => {
     const data = collection(db, 'wines');
     const col = await getDocs(data);
     const res = col.docs.map((doc) => (doc = { id: doc.id, ...doc.data() }));
-    console.log(res);
-    setProducts(res);
+    if (categoryId === undefined) {
+      setProducts(res);
+    } else if (categoryId) {
+      let resFiltered = res.filter((e) => e.category === categoryId);
+      setProducts(resFiltered);
+    }
     setLoading(false);
   };
 
   useEffect(() => {
     setLoading(true);
     getData();
-  }, []);
+  }, [categoryId]);
 
   return (
     <>
