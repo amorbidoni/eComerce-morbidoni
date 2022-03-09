@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useCartContext } from '../context/CartProvider';
+import { CartForm } from './CartForm';
 
 import { ItemsInCart } from './ItemsIncart';
 
@@ -43,6 +44,9 @@ export const CartApp = () => {
               Seguir comprando
             </Link>
             <button className="btn__primary--big btn">Confirmar compra</button>
+          </div>
+          <div>
+            <CartForm total={getTotalPrice()} carrito={itemsInCart} />
           </div>
         </div>
       ) : (

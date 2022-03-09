@@ -2,7 +2,7 @@ import React, { memo } from 'react';
 import ItemCount from '../item-count/ItemCount';
 import './item.scss';
 import { SearchWidget } from './SearchWidget';
-export const Item = memo(({ product, cart }) => {
+export const Item = memo(({ product }) => {
   return (
     <div className="product-card">
       <div className="search-icon__box">

@@ -11,7 +11,7 @@ export const ItemsInCart = memo(({ product }) => {
         <img src={product.image} alt={product.name} />
       </td>
       <td className="cart-card__detail">
-        <p>{` ${product.name} ${product.tpye}`}</p>
+        <p>{` ${product.name} ${product.specifications}`}</p>
       </td>
       <td className="cart-card__quantity">
         <p>{product.qty}</p>
