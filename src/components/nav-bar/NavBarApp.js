@@ -18,16 +18,6 @@ const NavBarApp = () => {
       name: 'Productos',
       link: '/productos',
     },
-    {
-      id: 3,
-      name: 'Promos',
-      link: '/promos',
-    },
-    {
-      id: 4,
-      name: 'Regalería',
-      link: '/regaleria',
-    },
   ];
 
   let itemsNav = navBarItems.map(({ name, id, link }) => (

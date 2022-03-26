@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useFirebase } from '../../hooks/useFirebase';
-
+import './cartForm.scss';
 export const CartForm = ({ carrito, total }) => {
   const [form, setForm] = useState({
     buyer: {
@@ -35,9 +35,10 @@ export const CartForm = ({ carrito, total }) => {
           <input
             onChange={handleInputCange}
             value={form.buyer.name}
-            className="form__item--inpit"
+            className="form__item--input"
             name="name"
             type="text"
+            placeholder="Nombre"
           />
         </div>
         <div className="form__item">
@@ -47,9 +48,10 @@ export const CartForm = ({ carrito, total }) => {
           <input
             onChange={handleInputCange}
             value={form.buyer.phone}
-            className="form__item--inpit"
+            className="form__item--input"
             name="phone"
             type="phone"
+            placeholder="Teléfono"
           />
         </div>
         <div className="form__item">
@@ -59,9 +61,10 @@ export const CartForm = ({ carrito, total }) => {
           <input
             onChange={handleInputCange}
             value={form.buyer.email}
-            className="form__item--inpit"
+            className="form__item--input"
             name="email"
             type="text"
+            placeholder="Email"
           />
         </div>
         <div className="form__item--btns">
@@ -74,6 +77,7 @@ export const CartForm = ({ carrito, total }) => {
           >
             Finalizar compra
           </button>
+          <button className="btn__primary--big ">Cancelar</button>
         </div>
       </form>
     </>

@@ -6,7 +6,7 @@ import { useParams } from 'react-router-dom';
 import NavBarCategoriesApp from '../nav-bar-categories/NavBarCategories';
 import { LoaderApp } from '../loader/Loader';
 
-const ItemListContainerApp = () => {
+const ItemListContainerApp = ({ categories = true }) => {
   let { categoryId } = useParams();
   const { products, loading, setLoading, getData } = useFirebase();
   useEffect(() => {
@@ -16,7 +16,8 @@ const ItemListContainerApp = () => {
 
   return (
     <>
-      <NavBarCategoriesApp />
+      {categories && <NavBarCategoriesApp />}
+
       {loading ? (
         <LoaderApp />
       ) : (

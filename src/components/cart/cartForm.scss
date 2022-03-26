@@ -1,0 +1,33 @@
+@import '/src/styles/variables';
+.form {
+  margin-bottom: 100px;
+  &__item {
+    &--label {
+      display: inline-block;
+      width: 100px;
+    }
+    &--input {
+      display: inline-block;
+      width: 200px;
+      margin: 10px 0;
+      height: 23px;
+      border: none;
+      border-bottom: 2px solid $color-primary-light;
+      transition: 0.5s;
+      &:focus {
+        border-bottom: 2px solid $color-primary-dark;
+        outline: none;
+      }
+    }
+    &--btns {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 400px;
+      margin-top: 20px;
+      button {
+        width: 150px;
+      }
+    }
+  }
+}

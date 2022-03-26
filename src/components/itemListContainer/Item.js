@@ -1,8 +1,14 @@
 import React, { memo } from 'react';
+import { useCartContext } from '../context/CartProvider';
 import ItemCount from '../item-count/ItemCount';
 import './item.scss';
+import { Link } from 'react-router-dom';
 import { SearchWidget } from './SearchWidget';
 export const Item = memo(({ product }) => {
+  const { addItem, isInCart, deleteItem } = useCartContext();
+  const onAdd = (counter) => {
+    addItem(product, counter);
+  };
   return (
     <div className="product-card">
       <div className="search-icon__box">
@@ -25,8 +31,24 @@ export const Item = memo(({ product }) => {
           <p className="product-card__detail--price">{'$' + product.price}</p>
         </div>
       </div>
-
-      <ItemCount stock={product.stock} initial={0} />
+      {!isInCart(product.id) ? (
+        <ItemCount stock={product.stock} initial={1} onAdd={onAdd} />
+      ) : (
+        <div className="product-card__in-cart">
+          <p>PRODUCTO AGREGADO</p>
+          <Link to="/carrito" className="btn__end">
+            Ver carrito
+          </Link>
+          <button
+            className="btn__end"
+            onClick={() => {
+              deleteItem(product.id);
+            }}
+          >
+            Eliminar del carrito
+          </button>
+        </div>
+      )}
     </div>
   );
 });

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useCartContext } from '../context/CartProvider';
 import { CartForm } from './CartForm';
@@ -7,7 +7,10 @@ import { ItemsInCart } from './ItemsIncart';
 
 export const CartApp = () => {
   const { itemsInCart, getTotalPrice, deleteAllItemsInCart } = useCartContext();
-
+  const [confirm, setConfirm] = useState(false);
+  const handleConfirm = () => {
+    setConfirm(true);
+  };
   return (
     <>
       {itemsInCart.length > 0 ? (
@@ -43,11 +46,15 @@ export const CartApp = () => {
             <Link to={'/productos'} className="btn__primary--big btn">
               Seguir comprando
             </Link>
-            <button className="btn__primary--big btn">Confirmar compra</button>
+            <button className="btn__primary--big btn" onClick={handleConfirm}>
+              Confirmar compra
+            </button>
           </div>
-          <div>
-            <CartForm total={getTotalPrice()} carrito={itemsInCart} />
-          </div>
+          {confirm && (
+            <div>
+              <CartForm total={getTotalPrice()} carrito={itemsInCart} />
+            </div>
+          )}
         </div>
       ) : (
         <div>

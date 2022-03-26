@@ -5,9 +5,7 @@ import ItemDetailContainerApp from '../components/itemDetailContainer/ItemDetail
 import ItemListContainerApp from '../components/itemListContainer/ItemListContainer';
 
 import NavBarApp from '../components/nav-bar/NavBarApp';
-import { Promos } from '../components/itemListContainer/Promos';
-import { Prueba } from '../components/prueba/Prueba';
-import { Regaleria } from '../components/itemListContainer/Regaleria';
+
 import { IndexApp } from '../components/Index';
 import { CartApp } from '../components/cart/Cart';
 
@@ -19,18 +17,22 @@ export const Rutas = () => {
         <Route path="/" element={<IndexApp />} />
         <Route
           path="/productos"
-          element={<ItemListContainerApp greeting="Lsitado por categoría" />}
+          element={
+            <ItemListContainerApp
+              greeting="Lsitado por categoría"
+              categories={true}
+            />
+          }
         />
         <Route
           path="/productos/:categoryId"
-          element={<ItemListContainerApp />}
+          element={<ItemListContainerApp categories={true} />}
         />
         {/* <Route path="/cart" element={<CartWidgetApp />} /> */}
         <Route path="/item-detail/:id" element={<ItemDetailContainerApp />} />
         <Route path="/itemDetail" element={<ItemDetailContainerApp />} />
         {/* <Route path="/prueba" element={<Prueba />} /> */}
-        <Route path="/promos" element={<Promos />} />
-        <Route path="/regaleria" element={<Regaleria />} />
+
         <Route path="/carrito" element={<CartApp />} />
       </Routes>
     </BrowserRouter>
