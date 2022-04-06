@@ -1,6 +1,9 @@
 @import '/src/styles/variables';
 .form {
   margin-bottom: 100px;
+  @media all and(max-width:791px) {
+    margin-top: 30px;
+  }
   &__item {
     &--label {
       display: inline-block;
@@ -25,8 +28,15 @@
       justify-content: space-between;
       width: 400px;
       margin-top: 20px;
+      @media all and(max-width:791px) {
+        width: auto;
+      }
       button {
         width: 150px;
+        &:disabled {
+          background-color: #ccc;
+          box-shadow: none;
+        }
       }
     }
   }

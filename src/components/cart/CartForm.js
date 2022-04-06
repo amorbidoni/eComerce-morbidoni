@@ -39,6 +39,7 @@ export const CartForm = ({ carrito, total }) => {
             name="name"
             type="text"
             placeholder="Nombre"
+            required
           />
         </div>
         <div className="form__item">
@@ -52,6 +53,7 @@ export const CartForm = ({ carrito, total }) => {
             name="phone"
             type="phone"
             placeholder="Teléfono"
+            required
           />
         </div>
         <div className="form__item">
@@ -65,6 +67,7 @@ export const CartForm = ({ carrito, total }) => {
             name="email"
             type="text"
             placeholder="Email"
+            required
           />
         </div>
         <div className="form__item--btns">

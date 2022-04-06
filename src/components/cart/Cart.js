@@ -57,8 +57,11 @@ export const CartApp = () => {
           )}
         </div>
       ) : (
-        <div>
+        <div className="cart-vacio">
           <p className="cart__alert-text">El carrito de compras esta vacío </p>
+          <Link to={'/productos'} className="btn__primary--big btn-link ">
+            Ver productos
+          </Link>
         </div>
       )}
     </>

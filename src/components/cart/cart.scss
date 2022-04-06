@@ -10,12 +10,28 @@
 .cart {
   &__container {
     padding: 0 100px;
+    @media all and (max-width: 791px) {
+      padding: 0 20px;
+    }
   }
   &__table {
     width: 100%;
     text-align: center;
     border-collapse: collapse;
     margin-top: 40px;
+    th {
+      @media all and (max-width: 791px) {
+        text-align: center;
+        font-weight: 100;
+        padding: 0;
+        padding: 0 5px;
+      }
+    }
+    @media all and (max-width: 791px) {
+      font-size: 0.7rem;
+      height: 200px;
+    }
+
     .total-row {
       background-color: $color-primary-dark;
       color: $color-primary-light;
@@ -25,6 +41,10 @@
   &__btns {
     display: flex;
     flex-direction: row;
+    @media all and (max-width: 791px) {
+      flex-direction: column;
+      width: 100%;
+    }
     .btn {
       display: flex;
       flex-direction: row;
@@ -34,6 +54,10 @@
       text-decoration: none;
 
       margin: 20px 10px 100px;
+      @media all and (max-width: 791px) {
+        margin: 10px auto;
+        width: 100%;
+      }
     }
   }
   &__alert-text {
@@ -100,6 +124,10 @@
   height: 100px;
   td {
     border-bottom: 1px solid $color-primary-light;
+
+    @media all and (max-width: 791px) {
+      height: 150px;
+    }
   }
   &__image {
     width: 140px;
@@ -110,6 +138,9 @@
       left: 50%;
       width: 40px;
       transform: translate(-50%, -50%) rotate(90deg);
+      @media all and (max-width: 791px) {
+        transform: translate(-50%, -50%) rotate(0deg);
+      }
     }
   }
 
@@ -125,6 +156,22 @@
         fill: white;
       }
     }
+  }
+}
+.cart-vacio {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  p {
+    font-size: 1.2rem;
+  }
+  a {
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 }
 @keyframes productAnimation {

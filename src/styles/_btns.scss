@@ -35,6 +35,10 @@
 .btn__primary--big {
   @include btn(100%, 40px);
 }
+.btn-link {
+  text-decoration: none;
+  padding: 10px;
+}
 .btn__add {
   display: flex;
   flex-direction: row;

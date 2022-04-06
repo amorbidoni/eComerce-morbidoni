@@ -27,7 +27,10 @@ const ItemCount = ({ stock, initial, onAdd, onAddModal, name }) => {
           <button className="btn__primary--small" onClick={handleRest}>
             -
           </button>
-          <h2>{counter}</h2>
+          <h2>
+            {counter}
+            <span> ({stock})</span>
+          </h2>
           <button className="btn__primary--small" onClick={handleIncrement}>
             +
           </button>
